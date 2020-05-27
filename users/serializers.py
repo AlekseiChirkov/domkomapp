@@ -9,7 +9,7 @@ class CarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Car
-        fields = ('id','car_brand', 'car_model', 'car_number')
+        fields = ('id', 'car_brand', 'car_model', 'car_number')
 
 
 class MyUserSerializer(serializers.ModelSerializer):
@@ -17,7 +17,7 @@ class MyUserSerializer(serializers.ModelSerializer):
     phone = serializers.HiddenField(
         default=serializers.CurrentUserDefault()
     )
-    automobile = CarSerializer(many=True,allow_null=True,default=None)
+    automobile = CarSerializer(many=True, allow_null=True, default=None)
 
     class Meta:
         model = User
@@ -36,9 +36,10 @@ class MyUserSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     owner_type = serializers.CharField(source='owner_type.user_type', read_only=True)
     phone = serializers.HiddenField(
-        default=serializers.CurrentUserDefault( )
+        default=serializers.CurrentUserDefault()
     )
     automobile = CarSerializer(many=True, allow_null=True, default=None)
+
     class Meta:
         model = User
         fields = ('id', 'full_name', 'phone', 'address', 'flat', 'floor',
@@ -46,7 +47,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         instance.full_name = validated_data.get('full_name', instance.full_name)
-        instance.address= validated_data.get('address', instance.address)
+        instance.address = validated_data.get('address', instance.address)
         instance.flat = validated_data.get('flat', instance.flat)
         instance.floor = validated_data.get('floor', instance.floor)
         instance.people = validated_data.get('people', instance.people)
