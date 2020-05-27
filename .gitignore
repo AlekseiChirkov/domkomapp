@@ -6,7 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c9535f3043b666cff33b3c8213582549846f9f5
 # Distribution / packaging
 .Python
 build/
@@ -103,7 +106,10 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+<<<<<<< HEAD
 .idea
+=======
+>>>>>>> 7c9535f3043b666cff33b3c8213582549846f9f5
 .env
 .venv
 env/
@@ -129,4 +135,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c9535f3043b666cff33b3c8213582549846f9f5
